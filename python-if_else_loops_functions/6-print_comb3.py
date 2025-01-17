@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-endStr = ", "
 
-for i in range(0, 100):
-    if i == 99:
-        endStr = ""
-    print("{:02d}".format(i), end=endStr)
-print('')
+for d1 in range(0, 9):
+    for d2 in range(d1 + 1, 10):
+        print("{:d}{:d}".format(d1, d2), end='')
+        if d1 != 8:
+            print(", ", end='')
+        else:
+            print("")
