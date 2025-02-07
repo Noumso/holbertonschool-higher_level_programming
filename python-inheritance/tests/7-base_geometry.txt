@@ -1,0 +1,38 @@
+>>> BG = __import__('7-base_geometry').BaseGeometry
+>>> go = BG()
+>>> go.integer_validator("aa", "bb")
+Traceback (most recent call last):
+TypeError: hey must be an integer
+>>> go.integer_validator("aa")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+>>> go.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> go.integer_validator(8, "bb")
+Traceback (most recent call last):
+TypeError: 10 must be an integer
+>>> go.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+>>> go.integer_validator("aa", [6, 7, 8])
+Traceback (most recent call last):
+TypeError: aa must be an integer
+>>> go.integer_validator("aa", (6, 7, 8))
+Traceback (most recent call last):
+TypeError: aa must be an integer
+>>> go.integer_validator("aa", True)
+Traceback (most recent call last):
+TypeError: aa must be an integer
+>>> go.integer_validator("aa", {2, 5})
+Traceback (most recent call last):
+TypeError: aa must be an integer
+>>> go.integer_validator("aa", None)
+Traceback (most recent call last):
+TypeError: aa must be an integer
+>>> go.integer_validator("aa", 0)
+Traceback (most recent call last):
+ValueError: aa must be positive num
+>>> go.integer_validator("aa", -2)
+Traceback (most recent call last):
+ValueError: aa must be positive num
